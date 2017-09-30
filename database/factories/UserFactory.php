@@ -23,3 +23,15 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Job::class, function (Faker $faker) {
+    return [
+        'title' => $faker->realText(50),
+        'description' => $faker->paragraph(1),
+        'user_id' => $faker->numberBetween(1, 50),
+        'salary' => $faker->numberBetween(10, 500000),
+        'country' => $faker->country,
+        'city' => $faker->city,
+        'type_job_id' => $faker->numberBetween(1, 3),
+    ];
+});
